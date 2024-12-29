@@ -1,0 +1,50 @@
+# Discussion Parameters
+max_rounds: 5
+min_consensus_threshold: 0.75
+stall_detection_threshold: 0.95
+
+# Round Management
+round_settings:
+  initial_round:
+    response_type: "evaluation"
+    required_elements:
+      - initial_position
+      - key_concerns
+      - suggestions
+  
+  middle_rounds:
+    response_type: "discussion"
+    required_elements:
+      - position_update
+      - response_to_concerns
+      - compromise_proposals
+  
+  final_round:
+    response_type: "resolution"
+    required_elements:
+      - final_position
+      - agreement_points
+      - remaining_concerns
+
+# Consensus Metrics
+consensus_metrics:
+  full_agreement: 1.0
+  strong_consensus: 0.8
+  weak_consensus: 0.6
+  deadlock: 0.4
+
+# Discussion Progress
+progress_indicators:
+  - position_changes
+  - concern_resolution
+  - compromise_adoption
+  - agreement_expansion
+
+# Stall Detection
+stall_detection:
+  metrics:
+    - position_similarity
+    - argument_repetition
+    - compromise_rejection
+  threshold: 0.9
+  consecutive_rounds: 2 
